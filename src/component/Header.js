@@ -11,7 +11,7 @@ function Header() {
                         <Image src={logo.src} alt="logo" width={logo.width} height={logo.height} />
                     </div>
                     <div className='w-fit'>
-                        <Link href="/about">Projects</Link>
+                        <Link href="/about">About</Link>
                     </div>
                 </div>
             </div>
