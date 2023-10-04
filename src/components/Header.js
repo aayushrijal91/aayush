@@ -1,8 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
-import logo from "@/images/logo/logo.png";
 import { Space_Mono } from 'next/font/google'
-// import pdf from "../files/Aayush-Rijal-Resume.pdf";
 
 const space = Space_Mono({
   subsets: ['latin'],
@@ -11,15 +8,14 @@ const space = Space_Mono({
 
 function Header() {
     return (
-        <nav className="border-b">
+        <nav className="border-b fixed w-100 bg-white">
             <div className="container py-4">
                 <div className="flex justify-between items-center">
                     <div className="w-3/12">
-                        <Image src={logo.src} alt="logo" width={logo.width} height={logo.height} />
+                        <h2 className={`text-5xl font-bold text-sky-950 ${space.className}`}>AR<span className="text-orange-600">.</span></h2>
                     </div>
                     <div className='w-fit'>
-                        {/* <a href="../files/Aayush-Rijal-Resume.pdf" rel="noopener noreferrer" className={`border-solid border-2 border-indigo-600 py-2 px-4 rounded-sm ${space.className}`}>Resume</a> */}
-                        <Link href="/about" className={`border-solid border-2 border-indigo-600 py-2 px-4 rounded-sm ${space.className}`}>Resume</Link>
+                        <Link href="./Aayush-Rijal-Resume.pdf" target="_blank" rel="noopener noreferrer" className={`border-solid border-2 border-orange-600 font-bold py-2 px-4 rounded-sm transition duration-200 ease-in-out hover:bg-orange-600 hover:text-white ${space.className}`}>Resume</Link>
                     </div>
                 </div>
             </div>
