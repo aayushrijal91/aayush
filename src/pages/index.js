@@ -10,12 +10,12 @@ function Home() {
     <main>
       <section className='h-screen flex items-center'>
         <div className="container">
-          <article className={`w-8/12 py-16 ${space.className}`}>
-            <p className='text-xl text-orange-600'>Hi, my name is</p>
-            <h1 className='text-7xl font-bold py-7'>
+          <article className={`md:w-8/12 py-16 ${space.className}`}>
+            <p className='text-md md:text-xl text-orange-600'>Hi, my name is</p>
+            <h1 className='text-5xl md:text-7xl font-bold py-7'>
               Aayush Rijal<span className='text-orange-600'>.</span>
             </h1>
-            <p className='text-lg'>I am a <span className='bg-orange-600 text-white px-2'>front-end developer</span> with over 5 years of web development experience. Using JavaScript, PHP, and both relational and non-relational databases I craft robust and scalable digital solutions that offer tangible value to customers.</p>
+            <p className='text-base md:text-lg'>I am a <span className='bg-orange-600 text-white px-2'>front-end developer</span> with over 5 years of web development experience. Using JavaScript, PHP, and both relational and non-relational databases I craft robust and scalable digital solutions that offer tangible value to customers.</p>
             <div className='flex gap-x-3 pt-7'>
               <a href='tel:0452637371' className='text-sky-950 hover:text-orange-600 transition duration-150 ease-in'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-phone-fill" viewBox="0 0 16 16">
