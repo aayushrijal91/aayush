@@ -1,4 +1,7 @@
 import { Space_Mono } from 'next/font/google'
+import Image from 'next/image';
+import aiims from '../images/logo/aiims.jpg';
+import yipl from '../images/logo/yipl.jpg';
 
 const space = Space_Mono({
   subsets: ['latin'],
@@ -15,7 +18,7 @@ function Home() {
             <h1 className='text-5xl md:text-7xl font-bold py-7'>
               Aayush Rijal<span className='text-orange-600'>.</span>
             </h1>
-            <p className='text-base md:text-lg'>I am a <span className='bg-orange-600 text-white px-2'>front-end developer</span> with over 5 years of web development experience. Using JavaScript, PHP, and both relational and non-relational databases I craft robust and scalable digital solutions that offer tangible value to customers.</p>
+            <p className='text-base md:text-lg'>I am a <span className='bg-orange-600 text-white px-2'>software developer</span> with over 5 years of web development experience. Using JavaScript, PHP, and both relational and non-relational databases I craft robust and scalable digital solutions that offer tangible value to customers.</p>
             <div className='flex gap-x-3 pt-7'>
               <a href='tel:0452637371' className='text-sky-950 hover:text-orange-600 transition duration-150 ease-in'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-phone-fill" viewBox="0 0 16 16">
@@ -39,6 +42,46 @@ function Home() {
               </a>
             </div>
           </article>
+        </div>
+      </section>
+
+      <section className='py-10'>
+        <div className='container'>
+          <p className='text-2xl font-bold'>Experiences</p>
+
+          <div className='w-full md:w-10/12 pt-20'>
+            <div className='flex flex-wrap items-center'>
+              <div className='w-full md:w-1/2'>
+                <div className='flex items-center space-x-4'>
+                  <div className='w-fit'>
+                    <Image src={aiims} alt="AIIMS" className='rounded-md' />
+                  </div>
+                  <div className='w-fit'>
+                    <div className='flex flex-wrap md:gap-x-4 gap-y-2'>
+                      <p className='text-black font-bold text-lg'>Aiims Group</p>
+                      <p className='bg-gray-100 px-2 rounded-md text-sm text-gray-500'>2021 — Present</p>
+                    </div>
+                    <p className="text-gray-500 text-sm pt-4 md:pt-1">Software Developer</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className='w-full md:w-1/2'>
+                <div className='flex flex-wrap items-center space-x-4'>
+                  <div className='w-fit'>
+                    <Image src={yipl} alt="YIPL" className='rounded-md' />
+                  </div>
+                  <div className='w-fit'>
+                    <div className='flex flex-wrap md:gap-x-4 gap-y-2'>
+                      <p className='text-black font-bold text-lg'>YoungInnovations Pvt. Ltd.</p>
+                      <p className='bg-gray-100 px-2 rounded-md text-sm text-gray-500'>2016 — 2018</p>
+                    </div>
+                    <p className="text-gray-500 text-sm pt-4 md:pt-1">Software Engineer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
