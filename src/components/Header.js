@@ -8,7 +8,7 @@ const space = Space_Mono({
 
 function Header() {
     return (
-        <nav className="border-b fixed w-full bg-white">
+        <nav className="border-b fixed w-full bg-white/50 backdrop-blur-lg z-[100000000]">
             <div className="container py-4">
                 <div className="flex justify-between items-center">
                     <div className="w-3/12">
