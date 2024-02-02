@@ -143,7 +143,7 @@ function Home() {
                   </div>
 
                   <p className='text-xl font-bold pt-10'>Sydney Nepalese Multicultural Center</p>
-                  <p className='text-gray-500 pt-5'>Designed, developed, and successfully launched a dynamic website to showcase the vibrant offerings of a Nepalese Multicultural Center located in Sydney. The website serves as an engaging virtual platform, effectively capturing the essence of the center's rich cultural diversity, events, and community initiatives.</p>
+                  <p className='text-gray-500 pt-5'>Designed, developed, and successfully launched a dynamic website to showcase the vibrant offerings of a Nepalese Multicultural Center located in Sydney. The website serves as an engaging virtual platform, effectively capturing the essence of the center&apos;s rich cultural diversity, events, and community initiatives.</p>
                 </div>
               </a>
             </div>
@@ -156,7 +156,7 @@ function Home() {
                   </div>
 
                   <p className='text-xl font-bold pt-10'>Cliftons</p>
-                  <p className='text-gray-500 pt-5'>Developed and launched an innovative website for Cliftons, a premier provider of flexible workspace solutions. The website is designed to highlight Cliftons' state-of-the-art venues, offering a seamless user experience for clients to explore event spaces, discover services, and easily connect with the Cliftons team.</p>
+                  <p className='text-gray-500 pt-5'>Developed and launched an innovative website for Cliftons, a premier provider of flexible workspace solutions. The website is designed to highlight Cliftons&apos; state-of-the-art venues, offering a seamless user experience for clients to explore event spaces, discover services, and easily connect with the Cliftons team.</p>
                 </div>
               </a>
             </div>
@@ -170,7 +170,7 @@ function Home() {
 
                   <p className='text-xl font-bold pt-10'>FixNFlow</p>
                   <p className='text-gray-500 pt-5'>
-Crafted and launched an interactive website for Fix n Flow, a leading service provider in Sydney. The website showcases the company's expertise in plumbing, gas fitting, and drainage solutions, offering a user-friendly interface for clients to explore services, contact the team, and stay informed about the latest industry updates.</p>
+                    Crafted and launched an interactive website for Fix n Flow, a leading service provider in Sydney. The website showcases the company&apos;s expertise in plumbing, gas fitting, and drainage solutions, offering a user-friendly interface for clients to explore services, contact the team, and stay informed about the latest industry updates.</p>
                 </div>
               </a>
             </div>
