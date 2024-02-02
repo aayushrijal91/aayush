@@ -1,7 +1,7 @@
 import { Space_Mono } from 'next/font/google'
 import Image from 'next/image';
 import aiims from '../images/logo/aiims.jpg';
-import yipl from '../images/logo/yipl.jpg';
+import yipl from '../images/logo/yipl.png';
 
 const space = Space_Mono({
   subsets: ['latin'],
@@ -53,7 +53,7 @@ function Home() {
             <div className='flex flex-wrap items-center'>
               <div className='w-full md:w-1/2'>
                 <div className='flex items-center space-x-4'>
-                  <div className='w-fit'>
+                <div className='w-[100px] h-[100px]'>
                     <Image src={aiims} alt="AIIMS" className='rounded-md' />
                   </div>
                   <div className='w-fit'>
@@ -68,7 +68,7 @@ function Home() {
 
               <div className='w-full md:w-1/2'>
                 <div className='flex flex-wrap items-center space-x-4'>
-                  <div className='w-fit'>
+                  <div className='w-[100px] h-[100px]'>
                     <Image src={yipl} alt="YIPL" className='rounded-md' />
                   </div>
                   <div className='w-fit'>
