@@ -17,7 +17,7 @@ const space = Space_Mono({
   weight: ['400', '700']
 });
 
-function Home({projects}) {
+function Home({ projects }) {
   return (
     <main>
       <section className='h-screen flex items-center'>
@@ -62,25 +62,23 @@ function Home({projects}) {
         </Link>
       </div>
 
-      <section className='py-28' id="experience">
+      <section className='py-16 md:py-28' id="experience">
         <div className='container'>
           <p className='text-2xl font-bold'>Experiences</p>
 
           <div className='w-full md:w-10/12 pt-20'>
-            <div className='flex flex-wrap items-center'>
+            <div className='flex flex-wrap items-center gap-y-5'>
               <div className='w-full md:w-1/2'>
                 <div className='flex items-center space-x-4'>
                   <div className='w-[100px] h-[100px]'>
                     <Image src={aiims} alt="AIIMS" className='rounded-md' />
                   </div>
                   <div className='w-fit'>
-                    <div className='flex flex-wrap md:gap-x-4 gap-y-2'>
-                      <p className='text-black font-bold text-lg'>Aiims Group</p>
-                      <div className='bg-gray-100 px-2 rounded-md flex items-center'>
-                        <p className='text-sm text-gray-500 leading-none'>2021 — Present</p>
-                      </div>
+                    <p className='text-black font-bold text-lg'>Aiims Group</p>
+                    <div className='bg-gray-100 mt-2 p-2 rounded-md inline-flex'>
+                      <p className='text-sm text-gray-500 leading-none'>2021 — Present</p>
                     </div>
-                    <p className="text-gray-500 text-sm pt-4 md:pt-1">Software Developer</p>
+                    <p className="text-gray-500 text-sm pt-3 md:pt-1">Software Developer</p>
                   </div>
                 </div>
               </div>
@@ -91,13 +89,11 @@ function Home({projects}) {
                     <Image src={yipl} alt="YIPL" className='rounded-md' />
                   </div>
                   <div className='w-fit'>
-                    <div className='flex flex-wrap md:gap-x-4 gap-y-2'>
-                      <p className='text-black font-bold text-lg'>YoungInnovations Pvt. Ltd.</p>
-                      <div className='bg-gray-100 px-2 rounded-md flex items-center'>
-                        <p className='text-sm text-gray-500 leading-none'>2016 — 2018</p>
-                      </div>
+                    <p className='text-black font-bold text-lg'>YoungInnovations Pvt. Ltd.</p>
+                    <div className='bg-gray-100 mt-2 p-2 rounded-md inline-flex'>
+                      <p className='text-sm text-gray-500 leading-none'>2016 — 2018</p>
                     </div>
-                    <p className="text-gray-500 text-sm pt-4 md:pt-1">Software Engineer</p>
+                    <p className="text-gray-500 text-sm pt-3 md:pt-1">Software Engineer</p>
                   </div>
                 </div>
               </div>
@@ -106,7 +102,7 @@ function Home({projects}) {
         </div>
       </section>
 
-      <section className='py-28'>
+      <section className='py-16 md:py-28'>
         <div className='container'>
           <p className='text-2xl font-bold'>Frameworks</p>
 
@@ -138,13 +134,13 @@ function Home({projects}) {
         </div>
       </section>
 
-      <section className='py-28'>
+      <section className='py-16 md:py-28'>
         <div className='container'>
           <p className='text-2xl font-bold'>Websites</p>
 
           <div className='flex flex-wrap pt-20 gap-y-7'>
             {projects.map((project, i) => (
-              <div key={i} className='md:w-1/2 lg:w-1/3 px-2'>
+              <div key={i} className='md:w-1/2 lg:w-1/3'>
                 <Project
                   title={project.title}
                   link={project.link}
@@ -167,8 +163,8 @@ export async function getServerSideProps() {
   const projects = await fetchQuery("projects");
 
   return {
-      props: {
-          projects
-      }
+    props: {
+      projects
+    }
   }
 }

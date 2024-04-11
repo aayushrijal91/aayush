@@ -17,7 +17,7 @@ const Project = ({ title, link, image, projectType, tools }) => {
 
             <p className='text-xl font-bold pt-10'>{title}</p>
             <p className="text-xs text-stone-400 font-light pt-3">{projectType}</p>
-            <div className="flex flex-wrap space-x-2 my-5">
+            <div className="flex flex-wrap gap-2 my-5">
                 {tools.map((tool, i) => {
                     return (<p key={i} className="rounded-full text-sm text-white bg-indigo-600 px-3 py-1">{tool}</p>);
                 })}
