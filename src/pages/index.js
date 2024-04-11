@@ -9,16 +9,15 @@ import laravel from '../images/logo/laravel.png';
 import wordpress from '../images/logo/wordpress.png';
 import shopify from '../images/logo/shopify.png';
 import strapi from '../images/logo/strapi.png';
-import snmc from '../images/lib/snmc.png';
-import cliftons from '../images/lib/cliftons.png';
-import fixnflow from '../images/lib/fixnflow.png';
+import Project from '@/components/Project';
+import { fetchQuery } from "@/util";
 
 const space = Space_Mono({
   subsets: ['latin'],
   weight: ['400', '700']
 });
 
-function Home() {
+function Home({projects}) {
   return (
     <main>
       <section className='h-screen flex items-center'>
@@ -141,48 +140,20 @@ function Home() {
 
       <section className='py-28'>
         <div className='container'>
-          <p className='text-2xl font-bold'>Projects</p>
+          <p className='text-2xl font-bold'>Websites</p>
 
-          <div className='flex flex-wrap pt-20'>
-            <div className='md:w-1/2 lg:w-1/3 px-2'>
-              <a href="https://snmc.org.au/" target='_blank'>
-                <div className="hover:bg-[#f8fbff] duration-300 p-4 rounded-md">
-                  <div className='rounded-md drop-shadow-lg overflow-hidden h-[300px]'>
-                    <Image className="w-full h-full object-cover" src={snmc} alt="nextjs" />
-                  </div>
-
-                  <p className='text-xl font-bold pt-10'>Sydney Nepalese Multicultural Center</p>
-                  <p className='text-gray-500 pt-5'>Designed, developed, and successfully launched a dynamic website to showcase the vibrant offerings of a Nepalese Multicultural Center located in Sydney. The website serves as an engaging virtual platform, effectively capturing the essence of the center&apos;s rich cultural diversity, events, and community initiatives.</p>
-                </div>
-              </a>
-            </div>
-
-            <div className='md:w-1/2 lg:w-1/3 px-2'>
-              <a href="https://cliftons.com/" target='_blank'>
-                <div className="hover:bg-[#f8fbff] duration-300 p-4 rounded-md">
-                  <div className='rounded-md drop-shadow-lg overflow-hidden h-[300px]'>
-                    <Image className="w-full h-full object-cover" src={cliftons} alt="nextjs" />
-                  </div>
-
-                  <p className='text-xl font-bold pt-10'>Cliftons</p>
-                  <p className='text-gray-500 pt-5'>Developed and launched an innovative website for Cliftons, a premier provider of flexible workspace solutions. The website is designed to highlight Cliftons&apos; state-of-the-art venues, offering a seamless user experience for clients to explore event spaces, discover services, and easily connect with the Cliftons team.</p>
-                </div>
-              </a>
-            </div>
-
-            <div className='md:w-1/2 lg:w-1/3 px-2'>
-              <a href="https://snmc.org.au/" target='_blank'>
-                <div className="hover:bg-[#f8fbff] duration-300 p-4 rounded-md">
-                  <div className='rounded-md drop-shadow-lg overflow-hidden h-[300px]'>
-                    <Image className="w-full h-full object-cover" src={fixnflow} alt="nextjs" />
-                  </div>
-
-                  <p className='text-xl font-bold pt-10'>FixNFlow</p>
-                  <p className='text-gray-500 pt-5'>
-                    Crafted and launched an interactive website for Fix n Flow, a leading service provider in Sydney. The website showcases the company&apos;s expertise in plumbing, gas fitting, and drainage solutions, offering a user-friendly interface for clients to explore services, contact the team, and stay informed about the latest industry updates.</p>
-                </div>
-              </a>
-            </div>
+          <div className='flex flex-wrap pt-20 gap-y-7'>
+            {projects.map((project, i) => (
+              <div key={i} className='md:w-1/2 lg:w-1/3 px-2'>
+                <Project
+                  title={project.title}
+                  link={project.link}
+                  image={project.image}
+                  projectType={project.projectType}
+                  tools={project.tools}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -191,3 +162,13 @@ function Home() {
 }
 
 export default Home;
+
+export async function getServerSideProps() {
+  const projects = await fetchQuery("projects");
+
+  return {
+      props: {
+          projects
+      }
+  }
+}
