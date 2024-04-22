@@ -188,6 +188,7 @@ function Home({ projects }) {
                   type="text"
                   onChange={handleChange}
                   value={formData.name}
+                  name="name"
                   className='border border-indigo-300 outline-none p-5 flex w-full h-[60px]'
                   placeholder='Full Name'
                   required
@@ -199,6 +200,7 @@ function Home({ projects }) {
                   type="email"
                   onChange={handleChange}
                   value={formData.email}
+                  name="email"
                   className='border border-indigo-300 outline-none p-5 flex w-full h-[60px]'
                   placeholder='Email'
                   required />
@@ -209,6 +211,7 @@ function Home({ projects }) {
                   type="tel"
                   onChange={handleChange}
                   value={formData.phone}
+                  name="phone"
                   className='border border-indigo-300 outline-none p-5 flex w-full h-[60px]'
                   placeholder='Phone Number'
                   required
@@ -219,6 +222,7 @@ function Home({ projects }) {
                 <textarea
                   onChange={handleChange}
                   value={formData.message}
+                  name="message"
                   className='border border-indigo-300 outline-none p-5 flex w-full'
                   placeholder='Message'>
                 </textarea>
