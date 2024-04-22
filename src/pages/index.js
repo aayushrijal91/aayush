@@ -11,6 +11,7 @@ import shopify from '../images/logo/shopify.png';
 import strapi from '../images/logo/strapi.png';
 import Project from '@/components/Project';
 import { fetchQuery } from "@/util";
+import { useState } from 'react';
 
 const space = Space_Mono({
   subsets: ['latin'],
@@ -18,6 +19,31 @@ const space = Space_Mono({
 });
 
 function Home({ projects }) {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+
+    const response = await fetch('/api/sendEmail', {
+      method: 'POST',
+      body: JSON.stringify(formData)
+    });
+  }
+
   return (
     <main>
       <section className='h-screen flex items-center'>
@@ -29,11 +55,6 @@ function Home({ projects }) {
             </h1>
             <p className='text-base md:text-lg'>I am a <span className='bg-orange-600 text-white px-2'>software developer</span> with over 5 years of web development experience. Using JavaScript, PHP, and both relational and non-relational databases I craft robust and scalable digital solutions that offer tangible value to customers.</p>
             <div className='flex gap-x-3 pt-7'>
-              <a href='tel:0452637371' className='text-sky-950 hover:text-orange-600 transition duration-150 ease-in'>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-phone-fill" viewBox="0 0 16 16">
-                  <path d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0z" />
-                </svg>
-              </a>
               <a href="mailto:aayush.rijal99@gmail.com" className='text-sky-950 hover:text-orange-600 transition duration-150 ease-in'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-envelope-paper-heart" viewBox="0 0 16 16">
                   <path fillRule="evenodd" d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1.133l.941.502A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765L2 3.133V2Zm0 2.267-.47.25A1 1 0 0 0 1 5.4v.817l1 .6v-2.55Zm1 3.15 3.75 2.25L8 8.917l1.25.75L13 7.417V2a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v5.417Zm11-.6 1-.6V5.4a1 1 0 0 0-.53-.882L14 4.267v2.55ZM8 2.982C9.664 1.309 13.825 4.236 8 8 2.175 4.236 6.336 1.31 8 2.982Zm7 4.401-4.778 2.867L15 13.117V7.383Zm-.035 6.88L8 10.082l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738ZM1 13.116l4.778-2.867L1 7.383v5.734Z" />
@@ -153,6 +174,67 @@ function Home({ projects }) {
           </div>
         </div>
       </section>
+
+      <section className='py-16 md:py-28 bg-indigo-600'>
+        <div className='container'>
+          <div className='bg-white p-10'>
+            <p className="rounded-full text-sm text-white inline-flex bg-orange-600 px-3 py-1">Lets Connect</p>
+
+            <form
+              onSubmit={handleFormSubmit}
+              className='mt-10 flex flex-wrap gap-y-4 justify-end'>
+              <div className='w-full px-1.5'>
+                <input
+                  type="text"
+                  onChange={handleChange}
+                  value={formData.name}
+                  className='border border-indigo-300 outline-none p-5 flex w-full h-[60px]'
+                  placeholder='Full Name'
+                  required
+                />
+              </div>
+
+              <div className='w-full md:w-1/2 px-1.5'>
+                <input
+                  type="email"
+                  onChange={handleChange}
+                  value={formData.email}
+                  className='border border-indigo-300 outline-none p-5 flex w-full h-[60px]'
+                  placeholder='Email'
+                  required />
+              </div>
+
+              <div className='w-full md:w-1/2 px-1.5'>
+                <input
+                  type="tel"
+                  onChange={handleChange}
+                  value={formData.phone}
+                  className='border border-indigo-300 outline-none p-5 flex w-full h-[60px]'
+                  placeholder='Phone Number'
+                  required
+                />
+              </div>
+
+              <div className='w-full px-1.5'>
+                <textarea
+                  onChange={handleChange}
+                  value={formData.message}
+                  className='border border-indigo-300 outline-none p-5 flex w-full'
+                  placeholder='Message'>
+                </textarea>
+              </div>
+
+              <div className='w-fit px-1.5'>
+                <button type="submit" className="bg-indigo-600 text-white h-[60px] px-10 rounded-full">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <footer className='py-4'>
+        <p className='text-center'>All Rights Reserved | 2024</p>
+      </footer>
     </main>
   )
 }
