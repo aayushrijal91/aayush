@@ -188,13 +188,13 @@ function Home({ projects }) {
         </div>
       </section>
 
-      <section className='py-16 md:py-28 bg-indigo-600'>
+      <section className='py-16 md:py-28 bg-indigo-600' id="contact">
         <div className='container'>
           <div className='bg-white p-10'>
             <p className="rounded-full text-sm text-white inline-flex bg-orange-600 px-3 py-1">Lets Connect</p>
 
             {responseMessage && <p className='text-indigo-600 font-bold pt-10'>{responseMessage}</p>}
-            
+
             <form
               onSubmit={handleFormSubmit}
               className='mt-10 flex flex-wrap gap-y-4 justify-end'>

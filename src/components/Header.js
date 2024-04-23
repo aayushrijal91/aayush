@@ -19,6 +19,9 @@ function Header() {
                             <li>
                                 <Link href="/work">Work</Link>
                             </li>
+                            <li>
+                                <Link href="#contact" rel="noopener noreferrer" className={`border-solid border-2 border-orange-600 font-bold py-2 px-4 rounded-sm transition duration-200 ease-in-out hover:bg-orange-600 hover:text-white ${space.className}`}>Contact</Link>
+                            </li>
                         </ul>
                     </div>
                 </div>
