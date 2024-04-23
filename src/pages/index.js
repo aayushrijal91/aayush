@@ -26,6 +26,9 @@ function Home({ projects }) {
     message: ''
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [responseMessage, setResponseMessage] = useState('');
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -37,11 +40,21 @@ function Home({ projects }) {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
 
-    const response = await fetch('/api/sendEmail', {
-      method: 'POST',
-      body: JSON.stringify(formData)
-    });
+    try {
+      const response = await fetch('/api/sendEmail', {
+        method: 'POST',
+        body: JSON.stringify(formData)
+      });
+
+      const responseData = await response.json();
+      setResponseMessage(responseData.message);
+    } catch (error) {
+      setResponseMessage('Failed to send email');
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -180,6 +193,8 @@ function Home({ projects }) {
           <div className='bg-white p-10'>
             <p className="rounded-full text-sm text-white inline-flex bg-orange-600 px-3 py-1">Lets Connect</p>
 
+            {responseMessage && <p className='text-indigo-600 font-bold pt-10'>{responseMessage}</p>}
+            
             <form
               onSubmit={handleFormSubmit}
               className='mt-10 flex flex-wrap gap-y-4 justify-end'>
@@ -229,7 +244,7 @@ function Home({ projects }) {
               </div>
 
               <div className='w-fit px-1.5'>
-                <button type="submit" className="bg-indigo-600 text-white h-[60px] px-10 rounded-full">Submit</button>
+                <button disabled={isLoading} type="submit" className={`${isLoading ? 'opacity-20' : 'opacity-100'} bg-indigo-600 text-white h-[60px] px-10 rounded-full`}>Submit</button>
               </div>
             </form>
           </div>
