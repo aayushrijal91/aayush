@@ -17,84 +17,84 @@ export default function handler(req, res) {
             title: "Rapid Plumbing",
             link: "https://www.rapidplumbinggroup.com.au/",
             image: rapid,
-            projectType: "Website",
+            projectType: "AiiMs",
             tools: ["CodeIgniter CMS", "PHP", "JS", "Bootstrap"]
         },
         {
             title: "Sydney Nepalese Multicultural Center",
             link: "https://snmc.org.au/",
             image: snmc,
-            projectType: "Website",
+            projectType: "Freelance",
             tools: ["Wordpress", "PHP", "JS", "Bootstrap"]
         },
         {
             title: "Cliftons",
             link: "https://cliftons.com/",
             image: cliftons,
-            projectType: "Website",
+            projectType: "AiiMs",
             tools: ["Next Js", "Node Js", "Strapi", "Tailwind"]
         },
         {
             title: "FixNFlow",
             link: "https://fixnflow.com.au/",
             image: fixnflow,
-            projectType: "fixnflow",
+            projectType: "AiiMs",
             tools: ["Wordpress", "PHP", "JS", "Tailwind"]
         },
         {
             title: "Mammoth Loans",
             link: "https://mammoth.loans/",
             image: mammoth,
-            projectType: "Website",
+            projectType: "AiiMs",
             tools: ["Wordpress", "PHP", "JS", "Bootstrap"]
         },
         {
             title: "Guiding Light",
             link: "https://guidinglightpsychology.com.au/",
             image: guidinglight,
-            projectType: "Website",
+            projectType: "AiiMs",
             tools: ["Wordpress", "PHP", "JS", "Bootstrap"]
         },
         {
             title: "SV Solar",
             link: "https://www.svsolar.com.au/",
             image: svsolar,
-            projectType: "Website",
+            projectType: "AiiMs",
             tools: ["Wordpress", "PHP", "JS", "Bootstrap"]
         },
         {
             title: "Dhilas Demolition",
             link: "https://dhilas.com.au/",
             image: dhilas,
-            projectType: "Website",
+            projectType: "AiiMs",
             tools: ["Wordpress", "PHP", "JS", "Bootstrap"]
         },
         {
             title: "Crystal Hot Water",
             link: "https://crystalhotwater.com.au/",
             image: crystalhotwater,
-            projectType: "Website",
+            projectType: "AiiMs",
             tools: ["Wordpress", "WooCommerce", "PHP", "JS", "Bootstrap"]
         },
         {
             title: "Hydronic First",
             link: "https://hydronicfirstmelbourne.com.au/",
             image: hydronicfirst,
-            projectType: "Landing Page",
+            projectType: "AiiMs",
             tools: ["PHP", "JS", "Bootstrap"]
         },
         {
             title: "Home Loan Options",
             link: "https://homeloanoptions.ai/",
             image: homeloanoptions,
-            projectType: "Landing Page",
+            projectType: "AiiMs",
             tools: ["PHP", "JS", "Tailwind"]
         },
         {
             title: "Gutter Cleaning Experts",
             link: "https://guttercleaningexperts.com.au/",
             image: guttercleaningexperts,
-            projectType: "Landing Page",
+            projectType: "AiiMs",
             tools: ["PHP", "JS", "Tailwind"]
         },
     ];
