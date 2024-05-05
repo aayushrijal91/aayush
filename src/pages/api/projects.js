@@ -10,15 +10,16 @@ import crystalhotwater from '@/images/lib/crystalhotwater.png';
 import hydronicfirst from '@/images/lib/hydronicfirst.png';
 import homeloanoptions from '@/images/lib/homeloanoptions.png';
 import guttercleaningexperts from '@/images/lib/guttercleaningexperts.png';
+import smartbusinessbroker from '@/images/lib/smartbusinessbroker.png';
 
 export default function handler(req, res) {
     const data = [
         {
-            title: "Rapid Plumbing",
-            link: "https://www.rapidplumbinggroup.com.au/",
-            image: rapid,
-            projectType: "AiiMs",
-            tools: ["CodeIgniter CMS", "PHP", "JS", "Bootstrap"]
+            title: "Smart Business Broker",
+            link: "https://smartbusinessbroker.com.au/",
+            image: smartbusinessbroker,
+            projectType: "Freelance",
+            tools: ["Wordpress", "PHP", "JS", "Tailwind", "S3 Bucket"]
         },
         {
             title: "Sydney Nepalese Multicultural Center",
@@ -26,6 +27,13 @@ export default function handler(req, res) {
             image: snmc,
             projectType: "Freelance",
             tools: ["Wordpress", "PHP", "JS", "Bootstrap"]
+        },
+        {
+            title: "Rapid Plumbing",
+            link: "https://www.rapidplumbinggroup.com.au/",
+            image: rapid,
+            projectType: "AiiMs",
+            tools: ["CodeIgniter CMS", "PHP", "JS", "Bootstrap"]
         },
         {
             title: "Cliftons",
